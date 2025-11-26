@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once APPPATH . 'libraries/entities/Cliente.php';
+
+/**
+ * @property CI_DB_query_builder $db
+ */
 class Cliente_model extends CI_Model
 {
 	private $table = 'clientes';
-
-	/**
-	 * @var CI_DB_query_builder
-	 */
-	public $db;
 
 	public function __construct() {
 		parent::__construct();

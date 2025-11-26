@@ -45,7 +45,7 @@ public function getBairro(){
 	return $this->bairro;
 }
 public function setBairro($bairro){
-	return $this->bairro = $bairro;
+	$this->bairro = $bairro;
 }
 public function getCidade(){
 	return $this->cidade;
