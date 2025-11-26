@@ -15,13 +15,13 @@
 
 <nav class="navbar navbar-dark bg-dark mb-4">
 	<span class="navbar-brand">Sistema Clientes</span>
-	<a href="<?= base_url('auth/logout') ?>" class="btn btn-outline-light btn-sm">Sair</a>
+	<a href="<?= site_url('auth/logout') ?>" class="btn btn-outline-light btn-sm">Sair</a>
 </nav>
 
 <div class="container">
 	<div class="d-flex justify-content-between align-items-center mb-3">
 		<h2>Gerenciar Clientes</h2>
-		<a href="<?= base_url('clientes/novo') ?>" class="btn btn-success"><i class="fas fa-plus"></i> Novo</a>
+		<a href="<?= site_url('clientes/novo') ?>" class="btn btn-success"><i class="fas fa-plus"></i> Novo</a>
 	</div>
 
 	<?php if($this->session->flashdata('sucesso')): ?>
@@ -50,8 +50,8 @@
 							<td><?= $c->getEmail() ?></td>
 							<td><?= $c->getTelefone() ?></td>
 							<td>
-								<a href="<?= base_url('clientes/editar/'.$c->getId()) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
-								<a href="<?= base_url('clientes/excluir/'.$c->getId()) ?>"
+								<a href="<?= site_url('clientes/editar/'.$c->getId()) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+								<a href="<?= site_url('clientes/excluir/'.$c->getId()) ?>"
 								   class="btn btn-sm btn-danger"
 								   onclick="return confirm('Tem certeza?');"><i class="fas fa-trash"></i></a>
 							</td>

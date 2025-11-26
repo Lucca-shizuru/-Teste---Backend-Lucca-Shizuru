@@ -29,7 +29,7 @@ class ClienteController extends CI_Controller
 	}
 	public function novo(){
 		$data['titulo'] = "Novo Cliente";
-		$data['action'] = base_url('clientes/salvar');
+		$data['action'] = site_url('clientes/salvar');
 		$data['cliente'] = null;
 
 		$this->load->view('clientes/formulario', $data);
@@ -42,7 +42,7 @@ class ClienteController extends CI_Controller
 		}
 		$data['cliente'] = $cliente;
 		$data['titulo'] = "Editar Cliente";
-		$data['action'] = base_url('clientes/atualizar/'.$id);
+		$data['action'] =site_url('clientes/atualizar/'.$id);
 		$this->load->view('clientes/formulario', $data);
 	}
 
