@@ -92,27 +92,34 @@
 
 <script>
 	document.getElementById('cep').addEventListener('blur', function(e) {
-		// Remove tudo que não for número
+
 		let cep = e.target.value.replace(/\D/g, '');
+		console.log("CEP digitado:", cep);
 
 		if (cep.length === 8) {
-			// Avisa visualmente que está buscando
-			document.getElementById('endereco').value = "...";
+			document.getElementById('endereco').value = "Buscando Cep...";
 
-			fetch(`https://viacep.com.br/ws/${cep}/json/`)
-				.then(r => r.json())
+			let url = '<?= site_url("api/cep/") ?>' + cep;
+			console.log("Chamando URL:", url);
+
+
+			fetch(url)
+				.then(response =>{
+					console.log("Resposta do servidor:", response);
+					if (!response.ok) throw new Error('Erro na requisição');
+					return response.json();
+				})
 				.then(data => {
-					if (!data.erro) {
+					console.log("Dados recebidos:", data);
 						document.getElementById('endereco').value = data.logradouro;
 						document.getElementById('bairro').value = data.bairro;
-						document.getElementById('cidade').value = data.localidade;
-						document.getElementById('estado').value = data.uf;
-					} else {
-						alert("CEP não encontrado");
-						document.getElementById('endereco').value = "";
-					}
-				})
-				.catch(() => alert("Erro ao buscar CEP"));
+						document.getElementById('cidade').value = data.cidade;
+						document.getElementById('estado').value = data.estado;
+					})
+					.catch(() =>{
+				alert("CEP não encontrado ou inválido.");
+				document.getElementById('endereco').value = "";
+			});
 		}
 	});
 </script>
