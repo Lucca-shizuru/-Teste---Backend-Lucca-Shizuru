@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-dark bg-dark mb-4">
 	<span class="navbar-brand">Sistema Clientes</span>
-	<a href="<?= site_url('auth/logout') ?>" class="btn btn-outline-light btn-sm">Sair</a>
+	<a href="<?= site_url('logout') ?>" class="btn btn-outline-light btn-sm">Sair</a>
 </nav>
 
 <div class="container">

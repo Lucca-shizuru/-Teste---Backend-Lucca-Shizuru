@@ -34,12 +34,12 @@ class LoginController extends CI_Controller {
 			redirect('clientes');
 		} else {
 			$this->session->set_flashdata('erro', 'Email ou senha incorretos.');
-			redirect('auth');
+			redirect('login');
 		}
 	}
 
 	public function logout() {
 		$this->session->sess_destroy();
-		redirect('auth');
+		redirect('login');
 	}
 }

@@ -21,14 +21,14 @@
 			</div>
 		<?php endif; ?>
 
-		<form action="<?= site_url('auth/logar') ?>" method="post">
+		<form action="<?= site_url('login/logar') ?>" method="post">
 			<div class="form-group">
 				<label>Email</label>
-				<input type="email" name="email" class="form-control" placeholder="admin@admin.com" required autofocus>
+				<input type="email" name="email" class="form-control" placeholder="Usuário" required autofocus>
 			</div>
 			<div class="form-group">
 				<label>Senha</label>
-				<input type="password" name="senha" class="form-control" placeholder="admin" required>
+				<input type="password" name="senha" class="form-control" placeholder="Senha" required>
 			</div>
 			<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 		</form>
