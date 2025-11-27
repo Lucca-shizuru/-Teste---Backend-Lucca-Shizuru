@@ -34,7 +34,7 @@ class ClienteController extends CI_Controller
 
 		$this->load->view('clientes/formulario', $data);
 	}
-	public function editar($id){
+	public function editar($id = null){
 		$cliente = $this->cliente_model->get_by_id($id);
 		if (!$cliente) {
 			$this->session->set_flashdata('erro', 'Cliente não encontrado.');
