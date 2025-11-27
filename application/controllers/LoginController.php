@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class LoginController extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -39,7 +39,6 @@ class Auth extends CI_Controller {
 	}
 
 	public function logout() {
-		// Destrói a sessão e volta pro login
 		$this->session->sess_destroy();
 		redirect('auth');
 	}
